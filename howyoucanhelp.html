@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Donate to Poverty Alleviation</title>
+
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-top: 60px; /* To make space for fixed navbar */
+            color: #fff;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(126, 126, 126, 0.847); /* Orange background */
+            border: 2px solid black; /* Black border */
+            z-index: 1000; /* Keep navbar on top */
+        }
+
+        .navbar .navbar-brand {
+            color: rgb(232, 189, 0); /* Golden color for the brand */
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: rgb(232, 189, 0) !important; /* Golden color for links */
+        }
+
+        .navbar .nav-link:hover {
+            color: #d78e07 !important; /* Hover effect for links */
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgb(0, 0, 0); /* Border for the toggler button */
+        }
+
+        .navbar-toggler-icon {
+            background-color: rgb(228, 192, 31); /* Color for the hamburger icon */
+        }
+
+        /* Collapse settings for the navbar */
+        .navbar-collapse {
+            justify-content: flex-end; /* Align the nav items to the right */
+        }
+
+        /* Set padding for the body to avoid overlap with the fixed navbar */
+        body {
+            padding-top: 70px; /* Give enough space for the fixed navbar */
+        }
+
+        /* Additional styling for links inside the nav */
+        .navbar-nav .nav-item {
+            padding: 0px; /* Add horizontal padding between items */
+        }
+
+        /* Styling for active links (optional but can be added) */
+        .navbar-nav .nav-item .active {
+            color: #000000 !important; /* Set active link color */
+        }
+
+        /* Container for the page content */
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to see background image */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #333;
+        }
+
+        /* Form Input Fields */
+        input[type="text"], input[type="email"], input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #cb8d12;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ff1919;
+        }
+
+        /* Styling for list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Log section at the bottom */
+        .log-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: right; /* Center align the links in the footer */
+    align-items: center; /* Vertically center the items */
+    padding: 10px;
+    background-color: #717171;
+    color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Styling for links in the footer */
+footer .nav-link {
+    color: rgb(0, 0, 0);
+    margin-right: 10px; /* Space between the links */
+}
+
+footer .nav-link:hover {
+    color: #000000;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(126, 126, 126, 0.847); border: 2px solid black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="nopoverty.html" style="color: rgb(0, 0, 0); font-weight: bold;">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-section">
+            <h2>Your Donation Details</h2>
+            <form id="donationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="Enter your full name">
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="Enter your email address">
+
+                <label for="donation">Donation Amount (P)</label>
+                <input type="number" id="donation" required placeholder="Enter donation amount" min="1">
+
+                <button type="submit">Donate Now</button>
+            </form>
+        </div>
+
+        <div class="log-section">
+            <h2>Event Log</h2>
+            <ul id="eventLog"></ul>
+        </div>
+
+        <div class="todo-section">
+            <h2>Your To-Do List</h2>
+            <input type="text" id="todoInput" placeholder="Add a task...">
+            <button id="addTodoButton">Add Task</button>
+            <ul id="todoList"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const donation = document.getElementById('donation').value;
+
+            const logMessage = `${name} donated $${donation} via email: ${email}.`;
+
+            const eventLogList = document.getElementById('eventLog');
+            const logItem = document.createElement('li');
+            logItem.textContent = logMessage;
+            eventLogList.appendChild(logItem);
+
+            document.getElementById('donationForm').reset();
+        });
+
+        document.getElementById('addTodoButton').addEventListener('click', function() {
+            const todoInput = document.getElementById('todoInput');
+            const task = todoInput.value.trim();
+
+            if (task) {
+                const todoList = document.getElementById('todoList');
+                const todoItem = document.createElement('li');
+                todoItem.textContent = task;
+                todoList.appendChild(todoItem);
+
+                todoInput.value = '';
+            }
+        });
+    </script>
+
+    <footer>
+        <h2 class="nav-link" href="">Cotact us</h2>
+        <h2 class="nav-link" href="">About us</h2>
+    </footer>
+</body>
+</html>
